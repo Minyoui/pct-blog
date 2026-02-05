@@ -1,9 +1,12 @@
 import Image from "next/image";
+import Hero from "@/sections/hero";
+import SubHero from "@/sections/subhero";
 
 export default function Home() {
   return (
     <main>
-      <h1>Hello World</h1>
+      <Hero className=""/>
+      <SubHero className=""/>
     </main>
   );
 }
