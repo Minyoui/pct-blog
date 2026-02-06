@@ -1,12 +1,16 @@
-import Image from "next/image";
+
 import Hero from "@/sections/hero";
-import SubHero from "@/sections/subhero";
+import Blogs from "@/sections/blogs";
+import Footer from "@/components/Footer";
+import Socials from "@/components/Socials";
 
 export default function Home() {
   return (
     <main>
-      <Hero className="mx-auto max-w-300"/>
-      <SubHero className="mx-auto max-w-300"/>
+      <Socials />
+      <Hero className="mx-auto max-w-275 p-3"/>
+      <Blogs className="mx-auto max-w-275 px-3"/>
+      <Footer className="mx-auto max-w-275 px-3"/>
     </main>
   );
 }
