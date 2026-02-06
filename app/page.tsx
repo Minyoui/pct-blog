@@ -5,8 +5,8 @@ import SubHero from "@/sections/subhero";
 export default function Home() {
   return (
     <main>
-      <Hero className=""/>
-      <SubHero className=""/>
+      <Hero className="mx-auto max-w-300"/>
+      <SubHero className="mx-auto max-w-300"/>
     </main>
   );
 }
