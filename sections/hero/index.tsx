@@ -1,17 +1,23 @@
-"use client"
-
 import Image from "next/image";
 import Container from "@/components/container";
 import Preview from "@/components/preview";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
+import { getAllPosts } from "@/lib/posts";
 
 interface HeroProps {
     className?: string;
 }
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
+    const posts = getAllPosts()
+    const latestPost = posts[0] // newest post
+
+    if (!latestPost) {
+        return <p>No posts yet.</p>
+    }
+
     return (
         <header className={`grid grid-cols-3 gap-3 font-inter ${className}`}>
             <Container className="relative col-span-2 flex items-center justify-center p-15">
@@ -42,8 +48,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                     <h2 className="font-semibold font-montserrat">Latest Post</h2>
                     <Link 
                         className="flex gap-1 text-sm"
-                        href=""
-                        target="_blank"
+                        href={`/blog/${latestPost.slug}`}
                     >
                         Read More
                         <ChevronRight className="h-5 w-5"/>
@@ -52,15 +57,14 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
 
                 <Preview 
                     className=""
-                    title="My First Blog Post!"
-                    date="February 7, 2026"
-                    body="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. "
+                    title={latestPost.title}
+                    date={latestPost.upload}
+                    body={latestPost.caption}
                 />
             </Container>
 
-            <motion.nav 
+            <nav 
                 className="col-span-3 rounded-3xl shadow-lg"
-                whileHover={{ y:-3 }}
             >
                 <ul className="w-full flex items-center justify-between py-3 px-5 text-sm">
                     <li className="font-semibold">
@@ -73,7 +77,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                         View All
                     </li>
                 </ul>
-            </motion.nav>
+            </nav>
         </header>
     );
 };
