@@ -19,9 +19,9 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
     }
 
     return (
-        <header className={`grid grid-cols-3 gap-3 font-inter ${className}`}>
+        <header className={`sm:grid sm:grid-cols-3 gap-3 font-inter flex flex-col ${className}`}>
             <Container className="relative col-span-2 flex items-center justify-center p-15">
-                <h1 className="text-[#656565] z-50 text-[200px] font-bold mix-blend-color-dodge">PACOT</h1>
+                <h1 className="text-[#656565] z-50 sm:text-[200px] text-[125px] font-bold mix-blend-color-dodge">PACOT</h1>
                 <Image 
                     src="/images/DJI_0217.JPG"
                     alt="Hero Background"
@@ -34,7 +34,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                 </div>
             </Container>
 
-            <Container className="flex flex-col items-center justify-center">
+            <Container className="flex flex-col items-center justify-center p-5">
                 <h1 className="text-3xl">Welcome!</h1>
                 <p className="">to Evane's blog page</p>
             </Container>
@@ -70,12 +70,12 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                     <li className="font-semibold">
                         Recent Posts
                     </li>
-                    <li>
+                    {/* <li>
                         Filter:
                     </li>
                     <li>
                         View All
-                    </li>
+                    </li> */}
                 </ul>
             </nav>
         </header>

@@ -7,7 +7,7 @@ import Socials from "@/components/Socials";
 export default function Home() {
   return (
     <main>
-      <Socials />
+      {/* <Socials /> */}
       <Hero className="mx-auto max-w-275 p-3"/>
       <Blogs className="mx-auto max-w-275 px-3"/>
       <Footer className="mx-auto max-w-275 px-3"/>
