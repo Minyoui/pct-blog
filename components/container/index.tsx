@@ -14,7 +14,7 @@ const Container: React.FC<ContainerProps> = ({
 }) => {
     return (
         <motion.div
-            className={`shadow-lg rounded-3xl overflow-hidden ${className}`}
+            className={`shadow-lg rounded-xl overflow-hidden ${className}`}
             whileHover={{ y:-3 }}
         >
             {children}

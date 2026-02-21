@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react"
 import { Facebook, Instagram, Youtube } from "lucide-react";
+import Image from "next/image";
 
 const SocialLinks = [
     {
@@ -30,7 +31,14 @@ const Footer: React.FC<FooterProps> = ({
     className
 }) => {
     return (
-        <footer className={`w-full flex flex-col items-center justify-center font-inter my-20 ${className}`}>
+        <footer className={`w-full flex flex-col items-center justify-center font-inter mb-20 mt-10 ${className}`}>
+            <Image 
+                src="/pacot-logo.svg"
+                alt="Pacot Signature"
+                width="250"
+                height="250"
+                className="invert-100 my-10"
+            />
             <div className="flex items-center space-x-5">
                 {SocialLinks.map((index) => (
                     <motion.a

@@ -3,8 +3,8 @@ import Container from "@/components/container";
 import Preview from "@/components/preview";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import { motion } from "motion/react";
 import { getAllPosts } from "@/lib/posts";
+import RotatingText from "@/components/RotatingText";
 
 interface HeroProps {
     className?: string;
@@ -34,13 +34,24 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                 </div>
             </Container>
 
-            <Container className="flex flex-col items-center justify-center p-5">
-                <h1 className="text-3xl">Welcome!</h1>
-                <p className="">to Evane's blog page</p>
+            <Container className="bg-[#828B76] flex flex-col items-center justify-center p-5">
+                <RotatingText
+                    texts={['Hi!', 'Ciao!', 'Mabuhay!', 'Annyeong!']}
+                    mainClassName="drop-shadow-lg text-white font-pacifico text-5xl px-2 sm:px-2 md:px-3 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+                    staggerFrom={"last"}
+                    initial={{ y: "150%" }}
+                    animate={{ y: 0 }}
+                    exit={{ y: "-190%" }}
+                    staggerDuration={0.025}
+                    splitLevelClassName="overflow-hidden p-5"
+                    transition={{ type: "spring", damping: 15, stiffness: 200 }}
+                    rotationInterval={2500}
+                    />
+                {/* <p className="">to Evane's blog page</p> */}
             </Container>
 
-            <Container className="flex items-center justify-center p-5">
-                <h1>I post weekly blogs based on my personal thoughts and opinions or it can be pretty random lol. Feel free to roam around and read my posts!</h1>
+            <Container className="relative flex items-center justify-center p-5">
+                <h1 className="text-sm">I post weekly blogs based on my personal thoughts and opinions or it can be pretty random lol. Feel free to roam around and read my posts!</h1>
             </Container>
 
             <Container className="col-span-2 bg-[#131513] text-white p-8">

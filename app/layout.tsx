@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter, Montserrat, Manrope } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Montserrat, Manrope, Pacifico } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -30,6 +30,12 @@ const manrope = Manrope({
   weight: ["400", "500", "600", "700"],
 });
 
+const pacifico = Pacifico({
+  subsets: ["latin"],
+  variable: "--font-pacifico", 
+  weight: "400",
+});
+
 export const metadata: Metadata = {
   title: "Pacot Blog",
   description: "Personal blog website proudly developed by Evane Pacot",
@@ -49,6 +55,7 @@ export default function RootLayout({
           ${inter.variable} 
           ${montserrat.variable} 
           ${manrope.variable}
+          ${pacifico.variable}
           antialiased`}
       >
         {children}
