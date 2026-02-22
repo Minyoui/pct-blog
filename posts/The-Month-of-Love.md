@@ -3,7 +3,7 @@ title: "The Month of Love"
 numericalDate: "2026-02-16"
 uploadDate: "February 16, 2026"
 caption: "My insights about this month and how I think self-love is also important"
-banner: "/images/blog/february16.jfif"
+banner: "/images/blog/february16.jpg"
 ---
 
 Late Happy Valentine's Day!!

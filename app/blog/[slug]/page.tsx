@@ -60,7 +60,9 @@ export default async function Post({
         </p> */}
       </div>
       <div className="w-full border border-black/30"/>
-      <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+      <div className="[&_p]:mb-6">
+        <div dangerouslySetInnerHTML={{ __html: contentHtml }} className="text-justify hyphens-auto"/>
+      </div>
     </main>
   )
 }

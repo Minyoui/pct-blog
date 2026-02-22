@@ -51,10 +51,10 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             </Container>
 
             <Container className="relative flex items-center justify-center p-5">
-                <h1 className="text-sm">I post weekly blogs based on my personal thoughts and opinions or it can be pretty random lol. Feel free to roam around and read my posts!</h1>
+                <h1 className="text-sm text-justify hyphens-auto">I post weekly blogs based on my personal thoughts and opinions or it can be pretty random lol. Feel free to roam around and read my posts!</h1>
             </Container>
 
-            <Container className="col-span-2 bg-[#131513] text-white p-8">
+            <Container className="col-span-2 bg-[#131513] text-white sm:p-8 p-4">
                 <div className="flex items-center justify-between mb-5">
                     <h2 className="font-semibold font-montserrat">Latest Post</h2>
                     <Link 
